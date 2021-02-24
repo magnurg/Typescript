@@ -1,0 +1,22 @@
+{
+  "name": "training-session",
+  "version": "1.0.0",
+  "description": "Project training session",
+  "scripts": {
+    "build": "tsc firstFile.ts",
+    "test": "node firstFile.js"
+  },
+  "author": "Anton Ponomarenko",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "keywords": [
+    "Project",
+    "for",
+    "training"
+  ],
+  "devDependencies": {
+    "@types/node": "^14.14.31"
+  }
+}
