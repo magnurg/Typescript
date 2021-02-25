@@ -1,21 +1,51 @@
 var customConsole = require('prompt-sync')();
-var operation = customConsole("Please, enter the number of operation:\n\nPlus: 1\nMinus: 2\nDivide: 3\nMultiply: 4\n\nand press \"Enter\"\n ");
-var number1 = customConsole("Please enter the first number and press \"Enter\"\n ");
-var number2 = customConsole("Please enter the second number and press \"Enter\"\n ");
-var result;
-var resultNames = ['addition', 'subtraction', 'dividing', 'multiplying'];
-var resultName = resultNames[operation - 1];
-if (operation == 1) {
-    result = +number1 + +number2;
-}
-else if (operation == 2) {
-    result = number1 - number2;
-}
-else if (operation == 3) {
-    result = number1 / number2;
-}
-else if (operation == 4) {
-    result = number1 * number2;
+// 1. �������� �������� � ������ �����
+var operationsArgs = ['1: addition', '2: subtraction', '3: dividing', '4: multiplying'];
+// 2. ���� FOR
+for (var i = 0; i < operationsArgs.length; i++) {
+    console.log(operationsArgs[i]);
 }
 ;
-console.log("The result of the " + resultName + " is " + result);
+var operation = customConsole("Please, enter the number of operation and press \"Enter\"\n");
+var number1 = customConsole("Please enter the first number and press \"Enter\"\n ");
+var number2 = customConsole("Please enter the second number and press \"Enter\"\n ");
+var resultNames = ['addition', 'subtraction', 'dividing', 'multiplying'];
+var resultName = resultNames[operation - 1];
+// 3. �������, 4 ��.
+function addition() {
+    return +number1 + +number2;
+}
+;
+function subtraction() {
+    return number1 - number2;
+}
+;
+function dividing() {
+    return number1 / number2;
+}
+;
+function multiplying() {
+    return number1 * number2;
+}
+;
+var result;
+// 4. ������� IF
+if (operation == 1) {
+    result = addition();
+}
+else if (operation == 2) {
+    result = subtraction();
+}
+else if (operation == 3) {
+    result = dividing();
+}
+else if (operation == 4) {
+    result = multiplying();
+}
+;
+// 5. ���� WHILE
+while (typeof (result) == 'number') {
+    console.log("The result of the " + resultName + " is " + result);
+    break;
+}
+;
