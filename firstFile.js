@@ -6,12 +6,20 @@ for (var i = 0; i < operationsArgs.length; i++) {
     console.log(operationsArgs[i]);
 }
 ;
-var operation = customConsole("Please, enter the number of operation and press \"Enter\"\n");
-var number1 = customConsole("Please enter the first number and press \"Enter\"\n ");
-var number2 = customConsole("Please enter the second number and press \"Enter\"\n ");
+var operation = 0;
+// 3. WHILE
+while (operation > 4 || operation < 1) {
+    operation = customConsole("\"The number of the operation suppose to be between 1 and 4. Please, enter the number of operation and press \"Enter\"\n    ");
+}
+;
+// while ( operation > 4) {
+//     operation = customConsole(`"The number of the operation suppose to be between 1 and 4. Please, enter the number of operation and press "Enter"
+//     `)};
+var number1 = customConsole("Please enter the first number and press \"Enter\"\n    ");
+var number2 = customConsole("Please enter the second number and press \"Enter\"\n    ");
 var resultNames = ['addition', 'subtraction', 'dividing', 'multiplying'];
 var resultName = resultNames[operation - 1];
-// 3. �������, 4 ��.
+// 4. �������, 4 ��.
 function addition() {
     return +number1 + +number2;
 }
@@ -29,7 +37,7 @@ function multiplying() {
 }
 ;
 var result;
-// 4. ������� IF
+// 5. ������� IF
 if (operation == 1) {
     result = addition();
 }
@@ -42,10 +50,5 @@ else if (operation == 3) {
 else if (operation == 4) {
     result = multiplying();
 }
-;
-// 5. ���� WHILE
-while (typeof (result) == 'number') {
-    console.log("The result of the " + resultName + " is " + result);
-    break;
-}
-;
+console.log("The result of the " + resultName + " is " + result);
+operation = 0;
