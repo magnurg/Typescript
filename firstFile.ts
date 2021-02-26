@@ -1,20 +1,22 @@
 const customConsole = require('prompt-sync')();
-// 1. РќР°Р·РІР°РЅРёСЏ РѕРїРµСЂР°С†РёР№ РІ РјР°СЃРёРІРµ СЃС‚СЂРѕРє
+// 1. Названия операций в масиве строк
 let operationsArgs: string[] = ['1: addition','2: subtraction','3: dividing','4: multiplying'];
-// 2. Р¦РёРєР» FOR
+// 2. Цикл FOR
 for (let i = 0; i < operationsArgs.length; i++) {
         console.log(operationsArgs[i]);
     };
-let operation: number = customConsole(`Please, enter the number of operation and press "Enter"
-`);
- 
+let operation: number = 0;
+// 3. WHILE
+while ( operation > 4 || operation < 1) {
+    operation = customConsole(`"The number of the operation suppose to be between 1 and 4. Please, enter the number of operation and press "Enter"
+    `)};
 let number1: number = customConsole(`Please enter the first number and press "Enter"
- `);
+    `);
 let number2: number = customConsole(`Please enter the second number and press "Enter"
- `);
+    `);
 let resultNames: string[] = ['addition','subtraction','dividing','multiplying'];
 let resultName: string = resultNames[operation-1];
-// 3. Р¤СѓРЅРєС†РёРё, 4 С€С‚.
+// 4. Функции, 4 шт.
 function addition() {
     return +number1 + +number2
     };
@@ -27,20 +29,17 @@ function dividing() {
 function multiplying() {
     return number1 * number2
     };
-
-let result: number;
-// 4. РЈСЃР»РѕРІРёСЏ IF
+let result: number
+// 5. Условия IF
 if(operation == 1){
-        result = addition();
-    }else if(operation == 2){
-        result = subtraction();
-    }else if(operation == 3){
-        result = dividing();
-    }else if(operation == 4){
-        result = multiplying();
-    };
-// 5. Р¦РёРєР» WHILE
-while(typeof(result) == 'number') {
-    console.log(`The result of the ${resultName} is ${result}`)
-    break
-    };
+    result = addition();
+}else if(operation == 2){
+    result = subtraction();
+}else if(operation == 3){
+    result = dividing();
+}else if(operation == 4){
+    result = multiplying();
+}
+    
+console.log(`The result of the ${resultName} is ${result}`);
+operation = 0;
